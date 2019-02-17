@@ -38,7 +38,7 @@ if ( ! class_exists( 'Divi_Hooks_Loader' ) ) {
 			 */
 			$wp_customize->add_panel(
 				'dvppl-panel-hooks', array(
-					'priority' => 55,
+					'priority' => 10,
 					'title' => __( 'Hooks', 'dvppl-child-theme' ),
 				)
 			);
