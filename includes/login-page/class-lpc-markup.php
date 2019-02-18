@@ -59,8 +59,6 @@ if ( ! class_exists( 'IPC_Markup' ) ) {
 			$lpc_border_color = get_option('dvppl_login_page_button_border_color');
 			$lpc_box_shadow_color = get_option('dvppl_login_page_button_box_shadow_color');
 
-
-
 		?>
 
 		<style type="text/css">
@@ -161,16 +159,16 @@ if ( ! class_exists( 'IPC_Markup' ) ) {
 					background: <?php echo $lpc_button_bg; ?> !important;
 				<?php endif; ?>
 
-				<?php if( !empty(  $lpc_button_color )) : ?>
-    			border-color: <?php echo $lpc_button_color; ?> !important;
+				<?php if( !empty(  $lpc_border_color )) : ?>
+    			border-color: <?php echo lpc_border_color; ?> !important;
 				<?php endif; ?>
 
 				<?php if( !empty(  $lpc_border_color )) : ?>
     			box-shadow: 0px 1px 0px <?php echo $lpc_border_color; ?> inset, 0px 1px 0px rgba(0, 0, 0, 0.15);
 				<?php endif; ?>
 
-				<?php if( !empty(  $lpc_box_shadow_color )) : ?>
-    			color: <?php echo $lpc_box_shadow_color; ?> !important;
+				<?php if( !empty(  $lpc_button_color )) : ?>
+    			color: <?php echo $lpc_button_color ?> !important;
 				<?php endif; ?>
 
 			}

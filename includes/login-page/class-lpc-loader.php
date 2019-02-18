@@ -472,7 +472,7 @@ if ( ! class_exists( 'LPC_Loader' ) ) {
 					$wp_customize, 
 					'dvppl_login_page_button_box_shadow_color', 
 					array(
-						'label'		=> esc_html__( 'Label Text Shadow Color', 'dvppl-child-theme' ),
+						'label'		=> esc_html__( 'Button Text Shadow Color', 'dvppl-child-theme' ),
 						'section'	=> 'dvppl-login-page-button-section',
 					)
 				)
