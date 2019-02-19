@@ -28,8 +28,32 @@ if ( ! class_exists( 'Divi_Hooks' ) ) {
 		 * Constructor
 		 */
 		public function __construct() {
+			add_action( 'admin_menu', array($this, 'dvppl_hooks_admin_link'), 99 );
 			require_once dirname(__FILE__) . '/class-hooks-loader.php';
 			require_once dirname(__FILE__) . '/class-hooks-markup.php';
+		}
+
+		public function dvppl_hooks_admin_link() {
+
+			$home_url = esc_url( home_url() );
+
+			$url = add_query_arg(
+				array(
+					'et_customizer_option_set' => 'theme',
+					'autofocus[panel]' => 'dvppl-panel-hooks',
+					'url' => rawurlencode( $home_url ),
+				),
+
+				admin_url( 'customize.php' )
+			);
+
+			add_submenu_page( 
+				'et_divi_options', 
+				esc_html__( 'Divi Hooks', 'dvppl-child-theme' ), 
+				esc_html__( 'Divi Hooks', 'dvppl-child-theme' ), 
+				'manage_options', 
+				$url
+			);
 		}
 
 	}

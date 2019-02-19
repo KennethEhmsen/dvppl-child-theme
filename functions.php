@@ -20,7 +20,6 @@ add_action( 'wp_enqueue_scripts', 'dvppl_enqueue_parent_style', 99 );
 /**
  * Enqueue parent style
  */
-
 if ( ! function_exists( 'dvppl_enqueue_scripts' ) ) {
 
   function dvppl_enqueue_scripts() {
@@ -52,6 +51,11 @@ function dvppl_theme_init() {
 add_action( 'init', 'dvppl_theme_init' );
 
 /**
+ * Load SVG Support file.
+ */
+require_once( get_stylesheet_directory(). '/includes/class-svg-mime-type.php' );
+
+/**
  * Load Hooks file.
  */
 require_once( get_stylesheet_directory(). '/includes/hooks/class-divi-hooks.php' );
@@ -59,4 +63,10 @@ require_once( get_stylesheet_directory(). '/includes/hooks/class-divi-hooks.php'
 /**
  * Load Login Page Customizer file.
  */
-require_once( get_stylesheet_directory(). '/includes/login-page/class-login-page-customizer.php' );
+require_once( get_stylesheet_directory(). '/includes/class-login-page.php' );
+
+/**
+ * Load Headings Customizer file.
+ */
+require_once( get_stylesheet_directory(). '/includes/class-global-headings.php' );
+

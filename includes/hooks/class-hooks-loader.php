@@ -28,18 +28,18 @@ if ( ! class_exists( 'Divi_Hooks_Loader' ) ) {
 		 * Constructor
 		 */
 		public function __construct() {
-			add_action( 'customize_register',    array( $this, 'dvppl_customize_register' ) );
+			add_action( 'customize_register',    array( $this, 'dvppl_hooks_customize_register' ) );
 		}
 
-		function dvppl_customize_register( $wp_customize ) {
+		function dvppl_hooks_customize_register( $wp_customize ) {
 
 			/**
 			 * Panel
 			 */
 			$wp_customize->add_panel(
 				'dvppl-panel-hooks', array(
-					'priority' => 10,
-					'title' => __( 'Hooks', 'dvppl-child-theme' ),
+					'priority' => 5,
+					'title' => __( 'Divi Hooks', 'dvppl-child-theme' ),
 				)
 			);
 
